@@ -1,0 +1,46 @@
+## Unity 자동 생성 캐시 및 임시 폴더
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/[Bb]uild/
+/[Bb]uilds/
+/[Ll]ogs/
+/[Uu]ser[Ss]ettings/
+
+## IDE 및 솔루션 파일 (Unity가 자동 재생성함)
+.vs/
+.vscode/
+.idea/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+## Unity 빌드 결과물 및 크래시 로그
+*.pidb.meta
+*.pdb.meta
+*.mdb.meta
+sysinfo.txt
+*.apk
+*.aab
+*.unitypackage
+*.app
+crashlytics-build.properties
+
+## OS 생성 임시 파일
+.DS_Store
+Thumbs.db
+
+## 공용 패킷 라이브러리(Shared.dll)는 추적 허용
+!Assets/Plugins/Shared.dll
+!Assets/Plugins/Shared.dll.meta
