@@ -10,6 +10,7 @@ MMORPG 서버 구조와 상태 동기화 최적화를 실험하기 위한 캡스
 | `MyMMORPG/Shared` | 서버·클라이언트 공용 패킷과 맵 설정 (netstandard2.1) |
 | `MyMMORPG_Client` | Unity 6000.3.10f1 2D URP 클라이언트 |
 | `Docs/` | 프로젝트 문서 |
+| `MyMMORPG_Client/Assets/Scenes/KDH_testScene.unity` | 2D 전투 테스트 씬 (서버 연결 없음) |
 
 ## 실행 방법
 
@@ -44,7 +45,19 @@ dotnet build MyMMORPG/Shared
 
 빌드 결과(`MyMMORPG/Shared/bin/<구성>/netstandard2.1/Shared.dll`)를 `MyMMORPG_Client/Assets/Plugins/Shared.dll`에 덮어씁니다. `.meta` 파일은 그대로 둡니다.
 
-## 조작
+### 전투 테스트 씬
+
+`Assets/Scenes/KDH_testScene`을 열고 Play를 누릅니다. 서버 없이 혼자 동작합니다.
+
+| 키 | 동작 |
+|---|---|
+| WASD·방향키 | 이동 |
+| 왼쪽 클릭 | 클릭한 방향으로 공격 |
+| F | 근접·원거리 공격 전환 |
+
+몬스터는 노란 원 안에 들어오면 추적하고, 붉은 범위로 예고한 뒤 공격합니다.
+
+## 조작 (SampleScene)
 
 | 키 | 동작 |
 |---|---|
@@ -58,7 +71,8 @@ dotnet build MyMMORPG/Shared
 - 5개 구역. 포탈로 1→2→3→4→5→1 순서로 이동
 - 구역별 위치 동기화와 NetLOD: 15m 이내 20Hz, 15~40m 5Hz, 40m 밖은 전송 안 함
 - 다른 플레이어 표시 위치 보간과 추측 이동(dead reckoning)
-- 퇴장 알림
+- 퇴장 메시지
+- 전투 테스트 씬(클라이언트 로컬): 근접·원거리 플레이어, 근접·원거리 몬스터, 체력바
 
 ## 아직 없는 것과 알려진 한계
 
